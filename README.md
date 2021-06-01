@@ -25,5 +25,6 @@ NOTE-
 
 The CSS and JS are already included internally. So You can make your work by pulling a single HTML file.
 
-~Regards Abhijeet Nema
+ 
+~Abhijeet Nema
 
