@@ -13,15 +13,15 @@ You can also filter Results By Age. Just Need to click on the option given and t
 
 NOTE- 
 
-      1. If you enter an invalid pincode and date (not in the given format), You may face a Warning regarding this.
+   1. If you enter an invalid pincode and date (not in the given format), You may face a Warning regarding this.
 
-      2. When you fetch the information, it may take some time depending on your Network Connection.
+   2. When you fetch the information, it may take some time depending on your Network Connection.
       
-      3. It may show "No Sessions Available..." if there are no data of vaccine avavilable in the official site of government regarding vaccination information.
+   3. It may show "No Sessions Available..." if there are no data of vaccine avavilable in the official site of government regarding vaccination information.
       
-      4. If You found some bugs and some lags in the page, try removing the Covid stats displayer by Close button, we suggest you to remove it in the initial stage even before fetching information. It was just for showing why Vaccination is must at the Time.
+   4. If You found some bugs and some lags in the page, try removing the Covid stats displayer by Close button, we suggest you to remove it in the initial stage even before fetching information. It was just for showing why Vaccination is must at the Time.
       
-      5. If You still found some error that need to be fixed for better experience, You can contact at the provided email in the Profile Section of mine.
+   5. If You still found some error that need to be fixed for better experience, You can contact at the provided email in the Profile Section of mine.
 
 The CSS and JS are already included internally. So You can make your work by pulling a single HTML file.
 
