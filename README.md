@@ -19,7 +19,7 @@ NOTE-
       
       3. It may show "No Sessions Available..." if there are no data of vaccine avavilable in the official site of government regarding vaccination information.
       
-      4. If You found some bugs and some lags in the page, try removing the Covid stats displayer by 'close' button, we suggest to remove it in the initaial stage even before fetching information. It was just for showing why Vaccination is must at the Time.
+      4. If You found some bugs and some lags in the page, try removing the Covid stats displayer by Close button, we suggest you to remove it in the initial stage even before fetching information. It was just for showing why Vaccination is must at the Time.
       
       5. If You still found some error that need to be fixed for better experience, You can contact at the provided email in the Profile Section of mine.
 
