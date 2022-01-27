@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-
+    <meta name="description" content="Vaccination Slots Spotter is a web application to saerch for available vaccination slots nearby. It comes with feature search by pincode and search by date. Besides also checks for covid stats in your state. Filter results by age, Current india covid stats are also additional features that come with it.">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -15,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Vaccination Slots Spotter</title>
+    <title>Vaccination Slots Spotter : Search available vaccines nearby</title>
 </head>
 
 <style type="text/css" media="all">
@@ -245,6 +248,7 @@
         <div class="input-group my-2" id="FilterResults">
             <select class="form-select" id="AgeFilteration" aria-label="Example select with button addon">
                 <option selected>Filter Results By Age -</option>
+                <option value="15">15</option>
                 <option value="18">18</option>
                 <option value="45">45</option>
                 <!-- <option value="3">Three</option> -->
@@ -326,7 +330,8 @@
 
 <script type="text/javascript" charset="utf-8">
 
-    console.log("Welcome");
+    console.log("%cWelcome to Vaccination Slots Spotter 👨‍⚕️", "color: white; background: linear-gradient( 13deg, #1d2d5a, #41846e); padding: 5px 10px; font-size: 15px; font-family: 'Merienda', cursive; border-radius: 8px; text-shadow: 2px 2px 5px black;");
+    console.log("%c// Developer 👨‍💻 - Abhijeet Nema", "color: white; background: linear-gradient( 13deg, #1d2d5a, #41846e); padding: 5px 10px; font-size: 14px; font-family: 'Merienda', cursive; border-radius: 8px; text-shadow: 2px 2px 5px black;");
 
     //Grabbing The Elements
     let PinCodeBox = document.getElementById("PinCodeBox");
@@ -583,14 +588,14 @@
             Searchbar.value = OptionClicked;
             OptionMenu.style.visibility = "hidden";
             RegionalBtn.style.transform = "TranslateY(-22vh)";
-
         })
     })
 
     // Fetching results with fetch api when RegionalBtn is clicked
     RegionalBtn.addEventListener("click", () => {
+        OptionMenu.style.visibility = "hidden";
         let Region = Searchbar.value;
-        let url = "https://api.apify.com/v2/key-value-stores/toDWvRj1JpTXiM8FF/records/LATEST?disableRedirect=true";
+        let url = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise";
         fetch(url).then((response) => {
             return response.json();
         }).then((data) => {
@@ -604,20 +609,20 @@
     function DisplayRegionData(Region, data) {
         // console.log(Region,data);
         let Temp;
-        let RegionDataArray = data["regionData"];
+        let RegionDataArray = data["data"]["statewise"];
         // console.log(RegionDataArray);
         RegionDataArray.forEach(Obj => {
-            if (Obj["region"] === Region) {
+            if (Obj["state"].toLowerCase() === Region.toLowerCase()) {
                 // console.log(Region);
                 Temp = `
-                <h3> ${Obj["region"]} </h3>
-                <span class="Keys">New Cases in last 24 hrs : <span class="list-group-item list-group-item-info"> ${Obj["newInfected"]}  </span> </span>
+                <h3> ${Obj["state"]} </h3>
+                 <!-- <span class="Keys">New Cases in last 24 hrs : <span class="list-group-item list-group-item-info"> ${Obj["newInfected"]}  </span> </span>
                 <span class="Keys">Recovered in last 24 hrs :  <span class="list-group-item list-group-item-success"> ${Obj["newRecovered"]}  </span> </span>
-                <span class="Keys">Decreased in last 24 hrs :  <span class="list-group-item list-group-item-danger"> ${Obj["newDeceased"]}  </span> </span>
-                <span class="Keys">Active Cases :  <span class="list-group-item list-group-item-info"> ${Obj["activeCases"]}  </span> </span>
-                <span class="Keys">Total Infected :  <span class="list-group-item list-group-item-dark"> ${Obj["totalInfected"]}  </span> </span>
+                <span class="Keys">Decreased in last 24 hrs :  <span class="list-group-item list-group-item-danger"> ${Obj["newDeceased"]}  </span> </span> -->
+                <span class="Keys">Active Cases :  <span class="list-group-item list-group-item-info"> ${Obj["active"]}  </span> </span>
+                <span class="Keys">Total Infected :  <span class="list-group-item list-group-item-dark"> ${Obj["confirmed"]}  </span> </span>
                 <span class="Keys">Recovered :  <span class="list-group-item list-group-item-success"> ${Obj["recovered"]}  </span> </span>
-                <span class="Keys">Decreased :  <span class="list-group-item list-group-item-danger"> ${Obj["deceased"]}  </span> </span>
+                <span class="Keys">Decreased :  <span class="list-group-item list-group-item-danger"> ${Obj["deaths"]}  </span> </span>
                 `;
             }
         })
