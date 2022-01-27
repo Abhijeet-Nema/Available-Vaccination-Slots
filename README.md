@@ -1,7 +1,7 @@
 # Available-Vaccination-Slots
 Check Availability of Covid-19 Vaccines near your area and details regarding it. This Web Page is completely made with HTML ,CSS, Bootstrap &amp; Vanilla JavaScript Skills.
 
-The Web Page loads with showing stats regarding Covid-19 cases of INDIA. However you can remove it also by clciking the Close button at the Top-Right Corner.
+The Web Page loads with showing stats regarding Covid-19 cases of INDIA. However you can remove it also by clicking the Close button at the Top-Right Corner.
 
 For searching the Availability of Vaccines in your Area, just have to enter the Pincode of your Area (make sure it should be six digit number), then click on the 'Fetch Information' Button if you don't want to specify the date and check it for today's date.
 
@@ -25,6 +25,8 @@ NOTE-
 
 The CSS and JS are already included internally. So You can make your work by pulling a single HTML file.
 
- 
+Link for the site :
+https://abhijeet-nema.github.io/Available-Vaccination-Slots/Index.html
+
 ~Abhijeet Nema
 
