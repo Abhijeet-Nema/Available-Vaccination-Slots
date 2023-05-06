@@ -26,7 +26,7 @@ NOTE-
 The CSS and JS are already included internally. So You can make your work by pulling a single HTML file.
 
 Link for the site :
-https://abhijeet-nema.github.io/Available-Vaccination-Slots/Index.html
+https://abhijeet-nema.github.io/Available-Vaccination-Slots
 
 ~Abhijeet Nema
 
